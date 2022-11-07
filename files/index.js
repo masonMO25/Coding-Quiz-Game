@@ -19,13 +19,14 @@ const endSection = document.getElementById("end");
 const score = document.getElementById("score");
 const initials = document.getElementById("score-name");
 const submitScore = document.getElementById("submit-score");
+const errorMessage = document.getElementById("error-message");
 
 //Questions
 class question {
     constructor(question, choices, correctChoice) {
       this.question = question;
       this.choices = choices;
-      this.CorrectChoice = correctChoice;
+      this.correctChoice = correctChoice;
     }
   }
 const question1 = new question("Commonly used data types DO NOT include: ", 
@@ -205,11 +206,11 @@ function displayQuestion() {
   
   function isInputValid(initials) {
     let errorMessage = "";
-    if (initial === "") {
+    if (initials === "") {
       errorMessage = "You can't submit empty initials!";
       displayFormError(errorMessage);
       return false;
-    } else if (initial.match(/[^a-z]/ig)) {
+    } else if (initials.match(/[^a-z]/ig)) {
       errorMessage = "Initials may only include letters."
       displayFormError(errorMessage);
       return false;

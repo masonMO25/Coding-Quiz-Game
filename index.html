@@ -25,7 +25,7 @@
       </p>
       <button id="start-button">Start Quiz</button>
     </section>
-    <section id="quiz-questions" class="quiz-section hidden">
+    <section id="quiz-questions" class="hidden quiz-section">
       <p id="timer">Time: <span id="time-remaining">0</span></p>
       <h1 id="question">Quiz Question</h1>
       <ul id="choices"></ul>
@@ -34,16 +34,16 @@
       <h1 id="end-title">Quiz Completed</h1>
       <p id="score-text">You Scored: <span id="score">0</span></p>
       <form id="submit-score">
-        <label for="scoreName">Enter your name:</label>
+        <label for="score-name">Enter your name:</label>
         <input type="text" id="score-name">
         <button type="submit">Submit</button>
         <p id="error-message"></p>
       </form>
-      <a href="index.html" class="back-button"><i class="fas fa-angle-left" aria-hidden="true"></i>Back to quiz</a>
+      <a href="index.html" class="back-button"><i aria-hidden="true"></i>Back to quiz</a>
     </section>
     <div>
-      <p id="correct" class="choice-status hidden"><i class="fas fa-check-circle" aria-hidden="true"></i>Correct!</p>
-      <p id="wrong" class="choice-status hidden"><i class="fas fa-times-circle" aria-hidden="true"></i>Wrong!</p>
+      <p id="correct" class="choice-status hidden"><i aria-hidden="true"></i>Correct!</p>
+      <p id="wrong" class="choice-status hidden"><i aria-hidden="true"></i>Wrong!</p>
     </div>
   </main>
   <script src="./files/index.js"></script>
