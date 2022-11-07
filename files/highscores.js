@@ -1,11 +1,8 @@
-//Highscores
-const HIGHSCORE_TABLE = document.getElementById("highscores-table");
-const CLEAR_HIGHSCORE_BTN = document.getElementById("clear-highscores");
+const highscoreTable = document.getElementById("highscores-table");
+const clearHighscore = document.getElementById("clear-highscores");
 
-//Event listener
-CLEAR_HIGHSCORE_BTN.addEventListener('click', clearHighscores);
+clearHighscore.addEventListener('click', clearHighscores);
 
-//Loads table when page loaded
 generateHighscoresTable();
 
 function generateHighscoresTable() {
@@ -15,7 +12,6 @@ function generateHighscoresTable() {
   } 
 }
 
-//Highscore table generation
 function addHighscoreTableRows(highscores) {
   highscores = JSON.parse(highscores);
 
@@ -24,7 +20,7 @@ function addHighscoreTableRows(highscores) {
     const scoreCell = createScoreCell(scoreItem.score);
     const initialsCell = createInitialsCell(scoreItem.initials);
     const highscoreTableRow = createHighscoreTableRow(rankCell, scoreCell, initialsCell);
-    HIGHSCORE_TABLE.appendChild(highscoreTableRow);
+    highscoreTable.appendChild(highscoreTableRow);
   });
 }
 
@@ -54,10 +50,9 @@ function createHighscoreTableRow(rankCell, scoreCell, initialsCell) {
   return tableRow;
 }
 
-//Clear table
 function clearHighscores() {
   localStorage.setItem('scoreList', []);
-  while (HIGHSCORE_TABLE.children.length > 1) {
-    HIGHSCORE_TABLE.removeChild(HIGHSCORE_TABLE.lastChild);
+  while (highscoreTable.children.length > 1) {
+    highscoreTable.removeChild(highscoreTable.lastChild);
   }
 }

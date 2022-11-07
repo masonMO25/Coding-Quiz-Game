@@ -1,11 +1,8 @@
-//Section list
 const quizSections = document.querySelectorAll(".quiz-section");
 
-//Start
 const startSelect = document.getElementById("start");
 const startBtn = document.getElementById("start-button");
 
-//Quiz questions
 const quizSection = document.getElementById("quiz-questions");
 const timeRemain = document.getElementById("time-remaining");
 const questions = document.getElementById("question");
@@ -14,14 +11,13 @@ const choiceStatus = document.querySelectorAll(".choice-status");
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
 
-//End
 const endSection = document.getElementById("end");
 const score = document.getElementById("score");
 const initials = document.getElementById("score-name");
 const submitScore = document.getElementById("submit-score");
 const errorMessage = document.getElementById("error-message");
 
-//Questions
+
 class Question {
     constructor(question, choices, correctChoice) {
       this.question = question;
@@ -47,12 +43,12 @@ let totalTime = 60;
 let totalTimeInterval;
 let choiceStatusTimeout; 
 
-/******** EVENT LISTENERS ********/ 
+
 startBtn.addEventListener('click', startGame);
 choices.addEventListener('click', processChoice);
 submitScore.addEventListener('submit', processInput);
 
-/******** START GAME ********/ 
+
 function startGame() {
   showElement(quizSections, quizSection);
   
@@ -62,7 +58,7 @@ function startGame() {
   startTimer();
 }
 
-/******** SHOWING/HIDING ELEMENTS ********/ 
+
 function showElement(siblingList, showElement) {
     for (element of siblingList) {
       hideElement(element);
@@ -76,7 +72,7 @@ function showElement(siblingList, showElement) {
     }
   }
   
-  /******** TIME ********/ 
+  
   function displayTime() {
     timeRemain.textContent = totalTime;
   }
@@ -97,7 +93,7 @@ function showElement(siblingList, showElement) {
     }
   }
   
- /******** QUESTIONS ********/ 
+ 
 function displayQuestion() {
     questions.textContent = questionList[currentQuestion].question;
   
@@ -117,7 +113,7 @@ function displayQuestion() {
     });
   }
   
-  //when user answers a question
+  
   function processChoice(event) {
     const userChoice = parseInt(event.target.parentElement.dataset.index);
   
@@ -159,7 +155,7 @@ function displayQuestion() {
     }, 1000);
   }
   
-  //Get next question
+
   function getNextQuestion() {
     currentQuestion++;
     if (currentQuestion >= questionList.length) {
@@ -169,7 +165,7 @@ function displayQuestion() {
     }
   }
   
-  /******** ENDING THE GAME ********/ 
+  
   function endGame() {
     clearInterval(totalTimeInterval);
     
@@ -180,8 +176,7 @@ function displayQuestion() {
   function displayScore() {
     score.textContent = totalTime;
   }
-  
-  /******** SUBMITTING INITIALS ********/ 
+   
   function processInput(event) {
     event.preventDefault();
   
@@ -218,7 +213,6 @@ function displayQuestion() {
     }
   }
   
-
   function saveHighscoreEntry(highscoreEntry) {
     const currentScores = getScoreList();
     placeEntryInHighscoreList(highscoreEntry, currentScores);
