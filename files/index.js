@@ -182,7 +182,7 @@ function displayQuestion() {
   
     const initial = initials.value.toUpperCase();
   
-    if (isInputValid(initial)) {
+    if (isInputValid(initials)) {
       const score = totalTime;
       const highscoreEntry = getNewHighscoreEntry(initial, score);
       saveHighscoreEntry(highscoreEntry);
