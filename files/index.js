@@ -198,21 +198,7 @@ function displayQuestion() {
     return entry;
   }
   
-  function isInputValid(initials) {
-    let errorMessage = "";
-    if (initials === "") {
-      errorMessage = "You can't submit empty initials!";
-      displayFormError(errorMessage);
-      return false;
-    } else if (initials.match(/[^a-z]/ig)) {
-      errorMessage = "Initials may only include letters."
-      displayFormError(errorMessage);
-      return false;
-    } else {
-      return true;
-    }
-  }
-  
+
   function saveHighscoreEntry(highscoreEntry) {
     const currentScores = getScoreList();
     placeEntryInHighscoreList(highscoreEntry, currentScores);
