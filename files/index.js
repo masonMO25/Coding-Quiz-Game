@@ -99,7 +99,7 @@ function showElement(siblingList, showElement) {
   
  /******** QUESTIONS ********/ 
 function displayQuestion() {
-    Question.textContent = questionList[currentQuestion].question;
+    questions.textContent = questionList[currentQuestion].question;
   
     displayChoiceList();
   }
@@ -175,7 +175,6 @@ function displayQuestion() {
     
     showElement(quizSections, endSection);
     displayScore();
-    setEndHeading();
   }
   
   function displayScore() {
