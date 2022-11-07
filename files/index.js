@@ -25,16 +25,16 @@ class Question {
       this.correctChoice = correctChoice;
     }
   }
-const question1 = new Question("Commonly used data types DO NOT include: ", 
-  ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-const question2 = new Question("The condition in an if / else statement is enclosed within ____.", 
-  ["Quotes", "Curly brackets", "Parentheses", "Square brackets"], 2);
-const question3 = new Question("Arrays in JavaScript can be used to store ____.", 
-  ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-const question4 = new Question("String values must be enclosed within _____ when being assigned to variables.", 
-  ["Commas", "Curly brackets", "Quotes", "Parentheses"], 2);
-const question5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
-  ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
+const question1 = new Question("To access an HTML element from JavaScript, you can use this method ", 
+  ["addEventListener", "const", "getElementById", "querySelectorAll"], 2);
+const question2 = new Question("How many values does a Boolean have?", 
+  ["0", "1", "2", "3"], 2);
+const question3 = new Question("What is a block of code that is executed when someone calls it?", 
+  ["strings", "for loops", "array", "function"], 3);
+const question4 = new Question("What operator is used to assign values to JavaScript variables?", 
+  ["==", "+=", "=", "-="], 2);
+const question5 = new Question("What is the logical operator for 'and'? ", 
+  ["||", "!==", "!", "&&"], 3);
 const questionList = [question1, question2, question3, question4, question5];
 
 let currentQuestion = 0;
