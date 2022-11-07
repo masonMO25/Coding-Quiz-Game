@@ -15,7 +15,6 @@ const endSection = document.getElementById("end");
 const score = document.getElementById("score");
 const initials = document.getElementById("score-name");
 const submitScore = document.getElementById("submit-score");
-const errorMessage = document.getElementById("error-message");
 
 
 class Question {
@@ -176,13 +175,13 @@ function displayQuestion() {
   function displayScore() {
     score.textContent = totalTime;
   }
-   
+  // initials
   function processInput(event) {
     event.preventDefault();
   
     const initial = initials.value.toUpperCase();
   
-    if (isInputValid(initials)) {
+    if (isInputValid(initial)) {
       const score = totalTime;
       const highscoreEntry = getNewHighscoreEntry(initial, score);
       saveHighscoreEntry(highscoreEntry);
@@ -192,19 +191,19 @@ function displayQuestion() {
   
   function getNewHighscoreEntry(initial, score) {
     const entry = {
-      initials: initial,
+      initial: initial,
       score: score,
     }
     return entry;
   }
   
-  function isInputValid(initials) {
+  function isInputValid(initial) {
     let errorMessage = "";
-    if (initials === "") {
+    if (initial === "") {
       errorMessage = "You can't submit empty initials!";
       displayFormError(errorMessage);
       return false;
-    } else if (initials.match(/[^a-z]/ig)) {
+    } else if (initial.match(/[^a-z]/ig)) {
       errorMessage = "Initials may only include letters."
       displayFormError(errorMessage);
       return false;
