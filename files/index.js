@@ -22,22 +22,22 @@ const submitScore = document.getElementById("submit-score");
 const errorMessage = document.getElementById("error-message");
 
 //Questions
-class question {
+class Question {
     constructor(question, choices, correctChoice) {
       this.question = question;
       this.choices = choices;
       this.correctChoice = correctChoice;
     }
   }
-const question1 = new question("Commonly used data types DO NOT include: ", 
+const question1 = new Question("Commonly used data types DO NOT include: ", 
   ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-const question2 = new question("The condition in an if / else statement is enclosed within ____.", 
+const question2 = new Question("The condition in an if / else statement is enclosed within ____.", 
   ["Quotes", "Curly brackets", "Parentheses", "Square brackets"], 2);
-const question3 = new question("Arrays in JavaScript can be used to store ____.", 
+const question3 = new Question("Arrays in JavaScript can be used to store ____.", 
   ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-const question4 = new question("String values must be enclosed within _____ when being assigned to variables.", 
+const question4 = new Question("String values must be enclosed within _____ when being assigned to variables.", 
   ["Commas", "Curly brackets", "Quotes", "Parentheses"], 2);
-const question5 = new question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
+const question5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
   ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
 const questionList = [question1, question2, question3, question4, question5];
 
@@ -99,7 +99,7 @@ function showElement(siblingList, showElement) {
   
  /******** QUESTIONS ********/ 
 function displayQuestion() {
-    question.textContent = questionList[currentQuestion].question;
+    Question.textContent = questionList[currentQuestion].question;
   
     displayChoiceList();
   }
@@ -173,7 +173,7 @@ function displayQuestion() {
   function endGame() {
     clearInterval(totalTimeInterval);
     
-    showElement(quizSection, endSection);
+    showElement(quizSections, endSection);
     displayScore();
     setEndHeading();
   }
